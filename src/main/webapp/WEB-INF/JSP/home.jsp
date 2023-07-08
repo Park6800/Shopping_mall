@@ -15,8 +15,13 @@
             <div>
                 즐겨 찾기
             </div>
-            <div>
+            <div id="right_nav">
+                <div>
                 로그인
+                </div>
+                <div>
+                회원가입
+                </div>
             </div>
         </nav>
     </div>
