@@ -15,8 +15,13 @@
             <div>
                 즐겨 찾기
             </div>
-            <div>
-                로그인
+            <div id="right_nav">
+                 <div>
+                      로그인
+                 </div>
+                 <div>
+                      <a href="signup.jsp">회원가입</a>
+                 </div>
             </div>
         </nav>
         <div>
@@ -48,7 +53,7 @@
                 </div>
                 <div>
                     <label for="">전화번호</label><br>
-                    <input type="text" placeholder=" '-' 기호업이 숫자만 입력 해주세요">
+                    <input type="text" placeholder=" '-' 기호업이 숫자만 입력 해주세요" name="User_phone">
                     <p class="error" id="pd">${errors.getFieldError("User_phone").defaultMessage}</p>
                 </div>
                 <div>

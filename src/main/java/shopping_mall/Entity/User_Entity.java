@@ -28,7 +28,7 @@ public class User_Entity {
     @Column(name = "User_name")
     private String user_name;
     @Column(name = "User_phone")
-    private int user_phone;
+    private String user_phone;
 
     public User_Entity(SignUpDto dto) {
         this.userId = dto.getUser_id();
