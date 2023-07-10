@@ -14,31 +14,48 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-<% User_Entity user = (User_Entity) session.getAttribute("login_result");
-out.println("세션에 저장된 사용자 이름: " + user);
-%>
+<% User_Entity user = (User_Entity) session.getAttribute("login_result"); %>
     <div>
-        <nav>
-            <div>
-                즐겨 찾기
-            </div>
-            <div id="right_nav">
+        <div id="nav_con">
+            <nav>
                 <div>
-                    <a href="login">로그인</a>
+                    즐겨 찾기
                 </div>
-                <div>
-                    <a href="signup">회원가입</a>
+                <div id="right_nav">
+                   <c:choose>
+                       <c:when test = "${user == null}">
+                           <div class="nav_right"><a href="login">로그인</a></div>
+                           <div class="nav_right"><a href="signup">회원가입</a></div>
+                       </c:when>
+                        <c:otherwise>
+                           <div class="myInfo"><h4>${user.getUser_name()}님</h4></div>
+                       </c:otherwise>
+                   </c:choose>
+                </div>
+            </nav>
+        </div>
+        <div id="categories">
+            <div id="categories_btn">
+                카테고리
+            </div>
+            <div id="search_con">
+                <div id="logo_img">
+                    img
+                </div>
+                <div id="search">
+                    <select id="select_search">
+                        <option value=>하이</option>
+                    </select>
+                    <input type="text" id="input_search">
+                </div>
+                <div id="My_page">
+                    마이 페이지
+                </div>
+                <div id="My_basket">
+                    장바구니
                 </div>
             </div>
-        </nav>
-         <c:choose>
-                <c:when test = "${user == null}">
-                    <button id="loginButton" onclick="location.href='/auth/login'">로그인</button>
-                </c:when>
-                <c:otherwise>
-                    <div class="myInfo"><h4>${user.getUser_name()}님</h4></div>
-                </c:otherwise>
-         </c:choose>
+        </div>
     </div>
 </body>
 </html>
