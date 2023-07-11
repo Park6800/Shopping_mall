@@ -16,10 +16,8 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <script>
-var firstCategory = true;
-function ajax_Categories() {
-    var categories = "";
-    categories = $("#type_Name").val();
+function ajax_Categories(typeName) {
+    var categories = typeName;
     $.ajax({
         url: "/Categories",
         type: "POST",
@@ -29,7 +27,7 @@ function ajax_Categories() {
         async: false, // AJAX 요청을 동기적으로 처리합니다.
         success: function (data) {
         var list_container = $(".detail_list");
-            list_container.empty();
+        list_container.empty();
              for (var i = 0; i < data.length; i++) {
                 var content = data[i];
                 list_container.append("<li class='z_height'>" + content + "<li>");
@@ -77,9 +75,9 @@ function ajax_Categories() {
                                 <ul id="backcolor" onmouseover="Open_Categories()" >
                                     <c:forEach var="category" items="${Categories_List}">
                                         <a href="goods">
-                                                <li class="li_top">
-                                                    <div onmouseover="ajax_Categories()">
-                                                        <input value="${category.typeName}" type="hidden" id="type_Name">
+                                                <li class="li_top" onmouseover="ajax_Categories('${category.typeName}')">
+                                                        <input value="${category.typeName}" type="hidden" class="type_Name">
+                                                    <div>
                                                         ${category.typeName}
                                                     </div>
                                                 </li>
