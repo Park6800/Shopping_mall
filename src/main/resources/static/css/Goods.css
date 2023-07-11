@@ -87,10 +87,6 @@ nav {
     color:white;
 }
 
-.li_top:hover {
-    text-decoration:underline;
-}
-
 #logo_img {
     width:10%;
 }
@@ -120,61 +116,4 @@ nav {
 #input_search {
     width:70%;
     height:40px;
-}
-
-.swiper{
-    width: 100%;
-    height: 100%;
-}
-
-.swiper {
-    overflow: hidden;
-    position: relative;
-  }
-
-.swiper-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide{
-    width: 100%;
-    height: 100%;
-}
-
-#Today_items {
-    width:60%;
-    margin:100px auto;
-}
-
-#hot_item {
-    display:flex;
-    justify-content:space-between;
-}
-
-#Today_container {
-    border:1px solid gray;
-    border-radius:10px;
-    margin-top:20px;
-}
-
-#today_top, #today_bottom {
-    display:flex;
-    justify-content:space-around;
-}
-
-.today_top_item {
-    margin-top:20px;
-    border:1px solid gray;
-}
-
-.today_bottom_item {
-    border:1px solid gray;
-    margin:20px 0 20px 0;
-    padding:0;
-}
-
-.z_height {
-    position:relative;
-    z-index:20;
 }
