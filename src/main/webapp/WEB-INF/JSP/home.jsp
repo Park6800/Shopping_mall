@@ -71,24 +71,26 @@ function ajax_Categories(typeName) {
                             카테고리
                         </div>
                         <div id="Categories_list" onmouseover="Open_Categories()">
-                            <div>
-                                <ul id="backcolor" onmouseover="Open_Categories()" >
-                                    <c:forEach var="category" items="${Categories_List}">
-                                        <a href="goods">
-                                                <li class="li_top" onmouseover="ajax_Categories('${category.typeName}')">
-                                                        <input value="${category.typeName}" type="hidden" class="type_Name">
-                                                    <div>
-                                                        ${category.typeName}
-                                                    </div>
-                                                </li>
-                                        </a>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                            <div id="Goods_detail">
-                                <ul class="detail_list">
-                                    <li></li>
-                                </ul>
+                            <div id="type_list">
+                                <div id="List_width">
+                                    <ul id="backcolor" onmouseover="Open_Categories()" >
+                                        <c:forEach var="category" items="${Categories_List}">
+                                            <a href="goods?type=${category.typeName}">
+                                                    <li class="li_top" onmouseover="ajax_Categories('${category.typeName}')">
+                                                            <input value="${category.typeName}" type="hidden" class="type_Name">
+                                                        <div>
+                                                            ${category.typeName}
+                                                        </div>
+                                                    </li>
+                                            </a>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                                <div id="Goods_detail">
+                                    <ul class="detail_list">
+                                        <li></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,10 +3,7 @@ package shopping_mall.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import shopping_mall.Entity.Categories_Entity;
 import shopping_mall.Entity.User_Entity;
 import shopping_mall.Repository.CategoriesRepository;
@@ -42,7 +39,7 @@ public class HomeController {
     }
 
     @GetMapping("/goods")
-    public String Goods(HttpSession session, Model model) {
+    public String Goods(@PathVariable("type") String type, HttpSession session, Model model) {
         User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         User_Entity user = null;
         List<Categories_Entity> categories = null;
@@ -59,7 +56,6 @@ public class HomeController {
     @ResponseBody
     public List<String> Goods_type (@RequestParam("typeName") String type_name) {
         List<String> Goods_Type = goodsService.findGoods_type(type_name);
-        System.out.println(Goods_Type);
         return Goods_Type;
     }
 }
