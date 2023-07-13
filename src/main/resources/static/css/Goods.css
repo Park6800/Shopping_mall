@@ -117,3 +117,16 @@ nav {
     width:70%;
     height:40px;
 }
+
+.img_type {
+    display:flex;
+    width:60%;
+    margin:50px auto;
+    justify-content:space-between;
+}
+
+.TypeName {
+    font-size:20px;
+    margin-top:10px;
+    text-align:center;
+}

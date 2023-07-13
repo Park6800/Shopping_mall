@@ -11,4 +11,7 @@ import java.util.List;
 public interface GoodsRepository extends JpaRepository <Goods_Entity,Long> {
     @Query(value="select Goods_type from Goods where Type_name = ?1", nativeQuery = true)
     public List<String> findGoods_type (String Goods);
+
+    @Query(value="select * from Goods where Type_name = ?1",nativeQuery = true)
+    public List<Goods_Entity> findGoods (String type);
 }

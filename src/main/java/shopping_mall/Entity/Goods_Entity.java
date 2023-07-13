@@ -19,7 +19,9 @@ public class Goods_Entity {
     @Column(name="Goods_id")
     private int Goods_id;
     @Column(name="Goods_type")
-    private String Goods_type;
+    private String GoodsType;
     @Column(name="Type_name")
     private String Type_name;
+    @Column(name="Goods_url")
+    private String GoodsUrl;
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import shopping_mall.Entity.Categories_Entity;
+import shopping_mall.Entity.Goods_Entity;
 import shopping_mall.Entity.User_Entity;
 import shopping_mall.Repository.CategoriesRepository;
 import shopping_mall.Repository.UserRepository;
@@ -39,7 +40,8 @@ public class HomeController {
     }
 
     @GetMapping("/goods")
-    public String Goods(@PathVariable("type") String type, HttpSession session, Model model) {
+    public String Goods(@RequestParam("type") String type, HttpSession session, Model model) {
+        List<Goods_Entity> goodsEntityList = goodsService.findGoodsInfo(type);
         User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         User_Entity user = null;
         List<Categories_Entity> categories = null;
@@ -47,6 +49,8 @@ public class HomeController {
         if(tmp != null) {
             user = userRepository.findByUserId(tmp.getUserId());
         }
+        System.out.println(goodsEntityList);
+        model.addAttribute("Goods_info",goodsEntityList);
         model.addAttribute("Categories_List",categories);
         model.addAttribute("user", user);
         return "goods";
