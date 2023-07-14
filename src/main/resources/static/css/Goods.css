@@ -118,11 +118,23 @@ nav {
     height:40px;
 }
 
+#Type_container{
+    display:flex;
+    width:80%;
+    justify-content:start;
+    margin:50px auto;
+}
+
+#Type_name_list {
+    width:10%;
+
+}
+
 .img_type {
     display:flex;
     width:60%;
-    margin:50px auto;
-    justify-content:space-between;
+    justify-content:start;
+
 }
 
 .TypeName {

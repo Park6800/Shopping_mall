@@ -73,7 +73,14 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div id="Type_container">
+            <div id="Type_name_list">
+                <c:forEach var="Goods" items="${Goods_info}">
+                    <div>
+                        <div class="TypeName">${Goods.goodsType}</div>
+                    </div>
+                </c:forEach>
+            </div>
             <div class="img_type">
                 <c:forEach var="Goods" items="${Goods_info}">
                     <div>
@@ -81,9 +88,6 @@
                         <div class="TypeName">${Goods.goodsType}</div>
                     </div>
                 </c:forEach>
-            </div>
-            <div>
-
             </div>
         </div>
     </div>
