@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인 홈</title>
+<title>굿즈 페이지</title>
 <link rel="stylesheet" href="/css/Goods.css">
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
