@@ -81,13 +81,16 @@
                     </div>
                 </c:forEach>
             </div>
-            <div class="img_type">
+            <div id="img_type">
                 <c:forEach var="Goods" items="${Goods_info}">
                     <div>
                         <img src="${Goods.goodsUrl}">
                         <div class="TypeName">${Goods.goodsType}</div>
                     </div>
                 </c:forEach>
+            </div>
+            <div id="bin_con">
+                멈춰!
             </div>
         </div>
     </div>

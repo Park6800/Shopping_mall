@@ -126,19 +126,21 @@ nav {
 }
 
 #Type_name_list {
-    width:10%;
-
+    width:14%;
 }
 
-.img_type {
+#img_type {
     display:flex;
-    width:60%;
+    width:76%;
     justify-content:start;
-
 }
 
 .TypeName {
     font-size:20px;
     margin-top:10px;
     text-align:center;
+}
+
+#bin_con {
+    width:10%;
 }
