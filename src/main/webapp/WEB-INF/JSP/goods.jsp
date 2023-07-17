@@ -40,14 +40,30 @@
                     <div id="categories_btn" onmouseover="Open_Categories()" onmouseout="Close_Categoires()">
                         <div id="re">
                             <div id="position">
-                                    카테고리
+                                카테고리
                             </div>
                             <div id="Categories_list" onmouseover="Open_Categories()">
-                                <ul id="backcolor" onmouseover="Open_Categories()" >
-                                    <c:forEach var="category" items="${Categories_List}">
-                                        <li class="li_top"><a href="goods">${category.typeName}</a></li>
-                                    </c:forEach>
-                                </ul>
+                                <div id="type_list">
+                                    <div id="List_width">
+                                        <ul id="backcolor" onmouseover="Open_Categories()" >
+                                            <c:forEach var="category" items="${Categories_List}">
+                                                <a href="goods?type=${category.typeName}">
+                                                    <li class="li_top" onmouseover="ajax_Categories('${category.typeName}')">
+                                                        <input value="${category.typeName}" type="hidden" class="type_Name">
+                                                        <div>
+                                                            ${category.typeName}
+                                                        </div>
+                                                    </li>
+                                                </a>
+                                            </c:forEach>
+                                        </ul>
+                                    </div>
+                                    <div id="Goods_detail">
+                                        <ul class="detail_list">
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,15 +93,17 @@
             <div id="Type_name_list">
                 <c:forEach var="Goods" items="${Goods_info}">
                     <div>
-                        <div class="TypeName">${Goods.goodsType}</div>
+                        <div class="TypeNames"><a href="">${Goods.goodsType}</a></div>
                     </div>
                 </c:forEach>
             </div>
             <div id="img_type">
                 <c:forEach var="Goods" items="${Goods_info}">
-                    <div>
-                        <img src="${Goods.goodsUrl}">
-                        <div class="TypeName">${Goods.goodsType}</div>
+                    <div class="img_display">
+                            <img src="${Goods.goodsUrl}">
+                        <div class="TypeName">
+                                ${Goods.goodsType}
+                        </div>
                     </div>
                 </c:forEach>
             </div>

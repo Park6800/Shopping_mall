@@ -120,24 +120,32 @@ nav {
 
 #Type_container{
     display:flex;
-    width:80%;
-    justify-content:start;
+    width:100%;
+    justify-content:center;
     margin:50px auto;
 }
 
 #Type_name_list {
-    width:14%;
+    width:10%;
 }
 
 #img_type {
     display:flex;
-    width:76%;
-    justify-content:start;
+    width:60%;
+    justify-content:space-between;
+}
+
+.TypeNames {
+    font-size:20px;
+    margin-top:10px;
+    text-align:center;
+    border:1px solid black;
+    border-radius:10px;
 }
 
 .TypeName {
     font-size:20px;
-    margin-top:10px;
+    margin-top:30px;
     text-align:center;
 }
 
