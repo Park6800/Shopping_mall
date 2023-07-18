@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -28,4 +29,8 @@ public class GoodsDetail_Entity {
     private String Goods_country;
     @Column(name="Goods_seller")
     private String Goods_seller;
+    @Column(name="Goods_explain")
+    private String Goods_explain;
+    @Column(name="Goods_delivery")
+    private int Goods_delivery;
 }

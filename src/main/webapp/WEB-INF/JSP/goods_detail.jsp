@@ -2,43 +2,19 @@
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="java.util.List" %>
 <%@page import="shopping_mall.Repository.*"%>
 <%@page import="shopping_mall.Entity.User_Entity" %>
+<%@page import="shopping_mall.Entity.GoodsDetail_Entity" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>굿즈 페이지</title>
+<title>굿즈 상세 페이지</title>
 <link rel="stylesheet" href="/css/Goods.css">
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-<script>
-function ajax_Categories(typeName) {
-    var categories = typeName;
-    $.ajax({
-        url: "/Categories",
-        type: "POST",
-        cache: false,
-        dataType: 'json',
-        data: { typeName:categories },
-        async: false, // AJAX 요청을 동기적으로 처리합니다.
-        success: function (data) {
-        var list_container = $(".detail_list");
-        list_container.empty();
-             for (var i = 0; i < data.length; i++) {
-                var content = data[i];
-                list_container.append("<li class='z_height'><a href='/goods_detail?type_detail=" + content + "'>" + content + "</a><li>");
-             }
-             var content = "";
-             categories = "";
-        },
-        error: function (request, status, error) {
-            console.log(error); // 에러 메시지를 콘솔에 출력
-        }
-    });
-}
-</script>
 <body>
 <% User_Entity user = (User_Entity) session.getAttribute("login_result"); %>
     <div>
@@ -95,7 +71,7 @@ function ajax_Categories(typeName) {
                     </div>
                     <div id="search_con">
                         <div id="logo_img">
-                            <a href="home">img</a>
+                            img
                         </div>
                         <div id="search">
                             <select id="select_search">
@@ -116,30 +92,21 @@ function ajax_Categories(typeName) {
             </div>
         </div>
         <div id="Type_container">
-            <div id="Type_name_list">
-                <c:forEach var="Goods" items="${Goods_info}">
-                    <div>
-                        <div class="TypeNames"><a href="/goods_detail?type_detail=${Goods.goodsType}">${Goods.goodsType}</a></div>
-                    </div>
-                </c:forEach>
-            </div>
-            <div id="img_type">
-                <c:forEach var="Goods" items="${Goods_info}">
-                    <div class="img_display">
-                        <a href="/goods_detail?type_detail=${Goods.goodsType}">
-                            <img src="${Goods.goodsUrl}">
-                            <div class="TypeName">
-                                ${Goods.goodsType}
+                    <div id="Type_name_list">
+                        <c:forEach var="Goods" items="${Goods_info}">
+                            <div>
+                                <div class="TypeNames"><a href="">${Goods.goodsName}</a></div>
                             </div>
-                        </a>
+                        </c:forEach>
                     </div>
-                </c:forEach>
+                    <div id="img_type">
+                        내용물
+                    </div>
+                    <div id="bin_con">
+                        멈춰!
+                    </div>
+                </div>
             </div>
-            <div id="bin_con">
-                멈춰!
-            </div>
-        </div>
-    </div>
 </body>
 <script>
 function Open_Categories() {

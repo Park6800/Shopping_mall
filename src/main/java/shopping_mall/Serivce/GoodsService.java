@@ -2,8 +2,10 @@ package shopping_mall.Serivce;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shopping_mall.Entity.GoodsDetail_Entity;
 import shopping_mall.Entity.Goods_Entity;
 import shopping_mall.Repository.GoodsRepository;
+import shopping_mall.Repository.Goods_DetailRepository;
 
 import java.util.List;
 
@@ -11,6 +13,8 @@ import java.util.List;
 public class GoodsService {
     @Autowired
     GoodsRepository goodsRepository;
+    @Autowired
+    Goods_DetailRepository goodsDetailRepository;
 
     public List<String> findGoods_type(String type_name) {
         List<String> Goods_name = null;
@@ -30,5 +34,16 @@ public class GoodsService {
             error.printStackTrace();
         }
         return goodsEntityList;
+    }
+
+    public List<GoodsDetail_Entity> findDetail_Goods (String type) {
+        List<GoodsDetail_Entity> goodsDetailEntities = null;
+        try {
+            goodsDetailEntities = goodsDetailRepository.findGoodsDetail(type);
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
+
+        return goodsDetailEntities;
     }
 }

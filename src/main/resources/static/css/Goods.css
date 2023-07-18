@@ -58,7 +58,7 @@ nav {
 }
 
 #re {
-    width:100%;
+    width:150px;
     height:100%;
     position:relative;
 }
@@ -76,15 +76,28 @@ nav {
     display:none;
 }
 
+#type_list {
+    display:flex;
+    width:400px;
+}
+
+#List_width {
+    width:150px;
+}
+
 .li_top {
     padding-left:10px;
     border:1px solid black;
-    width:150%;
+    width:100%;
     height:30px;
     position: relative;
     background: #87ceeb;
     z-index:9;
     color:white;
+}
+
+.li_top:hover {
+    text-decoration:underline;
 }
 
 #logo_img {
@@ -151,4 +164,21 @@ nav {
 
 #bin_con {
     width:10%;
+}
+
+#Goods_detail {
+    position:relative;
+    width:200px;
+    height:300px;
+    z-index:10;
+}
+
+.z_height {
+    position:relative;
+    z-index:20;
+    width:200px;
+    height:30px;
+    border:1px solid black;
+    color:white;
+    background:#87ceeb;
 }
