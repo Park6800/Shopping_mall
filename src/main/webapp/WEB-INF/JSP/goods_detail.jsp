@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>굿즈 상세 페이지</title>
-<link rel="stylesheet" href="/css/Goods.css">
+<link rel="stylesheet" href="/css/GoodsDetail.css">
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -93,14 +93,18 @@
         </div>
         <div id="Type_container">
                     <div id="Type_name_list">
-                        <c:forEach var="Goods" items="${Goods_info}">
-                            <div>
-                                <div class="TypeNames"><a href="">${Goods.goodsName}</a></div>
-                            </div>
-                        </c:forEach>
+
                     </div>
                     <div id="img_type">
-                        내용물
+                         <c:forEach var="Goods" items="${Goods_detail}">
+                            <div class="img_display">
+                                <a href="">
+                                    <div class="TypeName">
+                                        ${Goods.goodsName}
+                                    </div>
+                                </a>
+                            </div>
+                         </c:forEach>
                     </div>
                     <div id="bin_con">
                         멈춰!

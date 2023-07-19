@@ -22,7 +22,7 @@ public class GoodsDetail_Entity {
     @Column(name="Goods_type")
     private String Goods_type;
     @Column(name="Goods_name")
-    private String Goods_name;
+    private String GoodsName;
     @Column(name="Goods_price")
     private String Goods_price;
     @Column(name="Goods_country")
