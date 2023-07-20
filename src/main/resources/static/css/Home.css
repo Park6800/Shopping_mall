@@ -104,9 +104,20 @@ nav {
     width:10%;
 }
 
+#category_bar {
+    text-align:center;
+}
+
+#shopping_cart , #MyPage , #Menu_Bar {
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
 #My_basket, #My_page {
     width:10%;
-    text-align:right;
+    text-align:center;
 }
 
 #search_con {

@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <title>메인 홈</title>
 <link rel="stylesheet" href="/css/Home.css">
+<%-- 폰트어썸 --%>
+<script src="https://kit.fontawesome.com/7bb4972374.js" crossorigin="anonymous"></script>
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <%-- 스와이퍼 cdn --%>
@@ -68,7 +70,12 @@ function ajax_Categories(typeName) {
                 <div id="categories_btn" onmouseover="Open_Categories()" onmouseout="Close_Categoires()">
                     <div id="re">
                         <div id="position">
-                            카테고리
+                            <div>
+                                <i class="fas fa-regular fa-bars" id="Menu_Bar"></i>
+                            </div>
+                            <div id="category_bar">
+                                카테고리
+                            </div>
                         </div>
                         <div id="Categories_list" onmouseover="Open_Categories()">
                             <div id="type_list">
@@ -109,10 +116,20 @@ function ajax_Categories(typeName) {
                         <input type="text" id="input_search" placeholder="찾는 상품을 검색해보세요.">
                     </div>
                     <div id="My_page">
-                        마이 페이지
+                        <div>
+                            <i class="fa-solid fa-user" id="MyPage"></i>
+                        </div>
+                        <div>
+                            마이 페이지
+                        </div>
                     </div>
                     <div id="My_basket">
-                        장바구니
+                        <div>
+                            <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
+                        </div>
+                        <div>
+                            장바구니
+                        </div>
                     </div>
                 </div>
             </div>
