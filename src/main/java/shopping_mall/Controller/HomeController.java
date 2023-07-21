@@ -1,6 +1,5 @@
 package shopping_mall.Controller;
 
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -77,5 +76,21 @@ public class HomeController {
         model.addAttribute("Goods_detail", goodsDetailEntities);
         model.addAttribute("user", user);
         return "goods_detail";
+    }
+
+    @GetMapping("/mypage")
+    public String MyPage (Model model) {
+        List<Categories_Entity> categories = null;
+        categories = categoriesRepository.findCategories();
+        model.addAttribute("Categories_List",categories);
+        return "mypage";
+    }
+
+    @GetMapping("/basket")
+    public String MyBasket (Model model) {
+        List<Categories_Entity> categories = null;
+        categories = categoriesRepository.findCategories();
+        model.addAttribute("Categories_List",categories);
+        return "basket";
     }
 }

@@ -116,108 +116,23 @@ function ajax_Categories(typeName) {
                         <input type="text" id="input_search" placeholder="찾는 상품을 검색해보세요.">
                     </div>
                     <div id="My_page">
-                        <a href="mypage">
-                            <div>
-                                <i class="fa-solid fa-user" id="MyPage"></i>
-                            </div>
-                            <div>
-                                마이 페이지
-                            </div>
-                        </a>
+                        <div>
+                            <i class="fa-solid fa-user" id="MyPage"></i>
+                        </div>
+                        <div>
+                            마이 페이지
+                        </div>
                     </div>
                     <div id="My_basket">
-                        <a href="basket">
-                            <div>
-                                <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
-                            </div>
-                            <div>
-                                장바구니
-                            </div>
-                        </a>
+                        <div>
+                            <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
+                        </div>
+                        <div>
+                            장바구니
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-             <div class="swiper mySwiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/img/스와이퍼2.jpg"></div>
-                    <div class="swiper-slide"><img src="/img/스와이퍼1.jpg"></div>
-                    <div class="swiper-slide"><img src="/img/스와이퍼3.jpg"></div>
-                  </div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-pagination"></div>
-             </div>
-         </div>
-         <div id="Today_items">
-            <h3>오늘의 아이템</h3>
-            <div id="hot_item">
-                <p>오늘 가장 HOT한 상품</p>
-                <p>전체 보기</p>
-            </div>
-            <div id="Today_container">
-                <div id="today_sub_con">
-                    <div id="today_top">
-                        <div class="today_top_item">
-                            <img src="/img/필터.jpg">
-                        </div>
-                        <div class="today_top_item">
-                            <img src="/img/화장실세제.jpg">
-                        </div>
-                    </div>
-                    <div id="today_bottom">
-                        <div class="today_bottom_item">
-                            <img src="/img/에어컨.jpg">
-                        </div>
-                        <div class="today_bottom_item">
-                            <img src="/img/삼계탕.jpg">
-                        </div>
-                        <div class="today_bottom_item">
-                            <img src="/img/화장품.jpg">
-                        </div>
-                        <div class="today_bottom_item">
-                            <img src="/img/세제.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-    </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="/js/swiper.js"></script>
-<script>
-function Open_Categories() {
-   $("#Categories_list").css('display', 'block');
-}
-function Close_Categoires() {
-   $("#Categories_list").css('display', 'none');
-}
-
-     var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,    // 슬라이드 사이 여백
-
-        slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
-        centeredSlides: true,    //센터모드
-        autoplay: {     //자동슬라이드 (false-비활성화)
-          delay: 2500, // 시간 설정
-          disableOnInteraction: false, // false-스와이프 후 자동 재생
-        },
-
-        loop : true,   // 슬라이드 반복 여부
-
-        loopAdditionalSlides : 1,
-
- // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
-        pagination: { // 호출(pager) 여부
-          el: ".swiper-pagination", //버튼을 담을 태그 설정
-          clickable: true, // 버튼 클릭 여부
-        },
-        navigation: {   // 버튼
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-</script>
+    </body>
 </html>
