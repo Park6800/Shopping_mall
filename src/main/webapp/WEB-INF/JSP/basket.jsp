@@ -137,6 +137,9 @@ function ajax_Categories(typeName) {
                                         </div>
                 </div>
             </div>
+            <div>
+                           장바구니
+                       </div>
         </div>
         </body>
         </html>
