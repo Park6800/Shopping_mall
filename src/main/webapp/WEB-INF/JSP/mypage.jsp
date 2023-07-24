@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인 홈</title>
-<link rel="stylesheet" href="/css/Home.css">
+<link rel="stylesheet" href="/css/MyPage.css">
 <%-- 폰트어썸 --%>
 <script src="https://kit.fontawesome.com/7bb4972374.js" crossorigin="anonymous"></script>
 <%-- 제이쿼리 --%>
