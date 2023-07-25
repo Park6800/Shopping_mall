@@ -139,7 +139,7 @@ function ajax_Categories(typeName) {
             </div>
              <div>
                             마이페이지
-                        </div>
+             </div>
         </div>
     </body>
 </html>
