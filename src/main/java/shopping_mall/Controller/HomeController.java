@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import shopping_mall.Entity.Categories_Entity;
-import shopping_mall.Entity.GoodsDetail_Entity;
-import shopping_mall.Entity.Goods_Entity;
-import shopping_mall.Entity.User_Entity;
+import shopping_mall.Entity.*;
 import shopping_mall.Repository.CategoriesRepository;
 import shopping_mall.Repository.UserRepository;
 import shopping_mall.Serivce.AuthService;
@@ -79,7 +76,7 @@ public class HomeController {
     }
 
     @GetMapping("/mypage")
-    public String MyPage (Model model) {
+    public String MyPage (HttpSession session,Model model) {
         List<Categories_Entity> categories = null;
         categories = categoriesRepository.findCategories();
         model.addAttribute("Categories_List",categories);
@@ -87,10 +84,20 @@ public class HomeController {
     }
 
     @GetMapping("/basket")
-    public String MyBasket (Model model) {
+    public String MyBasket (@RequestParam("UserId") String id, HttpSession session, Model model) {
         List<Categories_Entity> categories = null;
+        List<Basket_Entity> basketEntity = null;
+        User_Entity tmp = (User_Entity) session.getAttribute("login_result");
+        User_Entity user = null;
+        basketEntity = goodsService.UserBasket(id);
         categories = categoriesRepository.findCategories();
+        if(tmp != null) {
+            user = userRepository.findByUserId(tmp.getUserId());
+        }
+        categories = categoriesRepository.findCategories();
+        model.addAttribute("Basket", basketEntity);
         model.addAttribute("Categories_List",categories);
+        model.addAttribute("user", user);
         return "basket";
     }
 }

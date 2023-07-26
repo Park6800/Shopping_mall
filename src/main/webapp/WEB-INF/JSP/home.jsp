@@ -126,7 +126,7 @@ function ajax_Categories(typeName) {
                         </a>
                     </div>
                     <div id="My_basket">
-                        <a href="basket">
+                        <a href="basket?UserId=${user.getUserId()}">
                             <div>
                                 <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
                             </div>
