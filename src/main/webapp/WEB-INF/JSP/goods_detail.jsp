@@ -98,7 +98,7 @@
                     <div id="img_type">
                          <c:forEach var="Goods" items="${Goods_detail}">
                             <div class="img_display">
-                                <a href="">
+                                <a href="goods_info?=${Goods.goodsName}">
                                     <div class="TypeName">
                                         ${Goods.goodsName}
                                     </div>

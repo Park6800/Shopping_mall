@@ -100,4 +100,15 @@ public class HomeController {
         model.addAttribute("user", user);
         return "basket";
     }
+
+    @GetMapping("/goods_info")
+    public String Information (HttpSession session, Model model) {
+        User_Entity tmp = (User_Entity) session.getAttribute("login_result");
+        User_Entity user = null;
+        if(tmp != null) {
+            user = userRepository.findByUserId(tmp.getUserId());
+        }
+        model.addAttribute("user", user);
+        return "goods_info";
+    }
 }
