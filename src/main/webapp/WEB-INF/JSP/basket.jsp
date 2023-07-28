@@ -104,7 +104,9 @@ function ajax_Categories(typeName) {
                 </div>
                 <div id="search_con">
                     <div id="logo_img">
-                        img
+                        <a href="home">
+                            img
+                        </a>
                     </div>
                     <div id="search">
                         <select id="select_search">
@@ -115,31 +117,31 @@ function ajax_Categories(typeName) {
                         </select>
                         <input type="text" id="input_search" placeholder="찾는 상품을 검색해보세요.">
                     </div>
-                      <div id="My_page">
-                                            <a href="mypage">
-                                                <div>
-                                                    <i class="fa-solid fa-user" id="MyPage"></i>
-                                                </div>
-                                                <div>
-                                                    마이 페이지
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="My_basket">
-                                            <a href="basket">
-                                                <div>
-                                                    <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
-                                                </div>
-                                                <div>
-                                                    장바구니
-                                                </div>
-                                            </a>
-                                        </div>
+                    <div id="My_page">
+                        <a href="mypage">
+                            <div>
+                                <i class="fa-solid fa-user" id="MyPage"></i>
+                            </div>
+                            <div>
+                                마이 페이지
+                            </div>
+                        </a>
+                    </div>
+                    <div id="My_basket">
+                        <a href="basket">
+                            <div>
+                                <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
+                            </div>
+                            <div>
+                                장바구니
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div>
-                           장바구니
-                       </div>
+                 장바구니
+            </div>
         </div>
-        </body>
-        </html>
+    </body>
+</html>

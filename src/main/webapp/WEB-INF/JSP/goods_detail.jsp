@@ -71,7 +71,9 @@
                     </div>
                     <div id="search_con">
                         <div id="logo_img">
-                            img
+                            <a href="home">
+                                img
+                            </a>
                         </div>
                         <div id="search">
                             <select id="select_search">
