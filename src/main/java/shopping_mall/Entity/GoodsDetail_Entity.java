@@ -25,6 +25,8 @@ public class GoodsDetail_Entity {
     private String GoodsName;
     @Column(name="Goods_price")
     private String Goods_price;
+    @Column (name="Goods_url")
+    private String GoodsUrl;
     @Column(name="Goods_country")
     private String Goods_country;
     @Column(name="Goods_seller")

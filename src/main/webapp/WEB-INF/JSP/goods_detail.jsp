@@ -102,6 +102,7 @@
                             <div class="img_display">
                                 <a href="goods_info?=${Goods.goodsName}">
                                     <div class="TypeName">
+                                        <img src="${Goods.goodsUrl}">
                                         ${Goods.goodsName}
                                     </div>
                                 </a>

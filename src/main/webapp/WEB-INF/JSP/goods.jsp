@@ -127,7 +127,7 @@ function ajax_Categories(typeName) {
                 <c:forEach var="Goods" items="${Goods_info}">
                     <div class="img_display">
                         <a href="/goods_detail?type_detail=${Goods.goodsType}">
-                            <img src="${Goods.goodsUrl}">
+                            <img src="${Goods.goodsUrl}" class="img_margin">
                             <div class="TypeName">
                                 ${Goods.goodsType}
                             </div>
