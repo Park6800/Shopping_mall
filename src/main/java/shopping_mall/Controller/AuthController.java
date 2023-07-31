@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Controller
-public class AutoController {
+public class AuthController {
 
     @Autowired
     AuthService authService;
@@ -74,5 +74,11 @@ public class AutoController {
         } else {
             return "login";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/main";
     }
 }

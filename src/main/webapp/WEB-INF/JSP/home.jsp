@@ -55,11 +55,12 @@ function ajax_Categories(typeName) {
                 <div id="right_nav">
                    <c:choose>
                        <c:when test = "${user == null}">
-                           <div class="nav_right"><a href="login">로그인</a></div>
-                           <div class="nav_right"><a href="signup">회원가입</a></div>
+                           <div class="nav_right"><a href="/login">로그인</a></div>
+                           <div class="nav_right"><a href="/signup">회원가입</a></div>
                        </c:when>
                         <c:otherwise>
                            <div class="myInfo"><h4>${user.getUser_name()}님</h4></div>
+                           <div><h4><a href="/logout">로그아웃</a></h4></div>
                        </c:otherwise>
                    </c:choose>
                 </div>
