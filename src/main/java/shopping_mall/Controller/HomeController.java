@@ -69,7 +69,6 @@ public class HomeController {
         if(tmp != null) {
             user = userRepository.findByUserId(tmp.getUserId());
         }
-        System.out.println("GoodsDEtail : " + goodsDetailEntities);
         model.addAttribute("Goods_detail", goodsDetailEntities);
         model.addAttribute("user", user);
         return "goods_detail";

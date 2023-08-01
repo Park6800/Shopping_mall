@@ -41,13 +41,14 @@ public class GoodsService {
     }
 
     public List<GoodsDetail_Entity> findDetail_Goods (String type) {
+        System.out.println("Type : " + type);
         List<GoodsDetail_Entity> goodsDetailEntities = null;
         try {
             goodsDetailEntities = goodsDetailRepository.findGoodsDetail(type);
         } catch (Exception error) {
             error.printStackTrace();
         }
-
+        System.out.println("Service : " + goodsDetailEntities);
         return goodsDetailEntities;
     }
 
@@ -58,7 +59,6 @@ public class GoodsService {
         } catch (Exception error) {
             error.printStackTrace();
         }
-        System.out.println("Service : " + basketEntities);
         return basketEntities;
     }
 }
