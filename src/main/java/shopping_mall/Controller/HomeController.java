@@ -77,8 +77,14 @@ public class HomeController {
     @GetMapping("/mypage")
     public String MyPage (HttpSession session,Model model) {
         List<Categories_Entity> categories = null;
+        User_Entity tmp = (User_Entity) session.getAttribute("login_result");
+        User_Entity user = null;
         categories = categoriesRepository.findCategories();
+        if(tmp != null) {
+            user = userRepository.findByUserId(tmp.getUserId());
+        }
         model.addAttribute("Categories_List",categories);
+        model.addAttribute("user", user);
         return "mypage";
     }
 
@@ -102,11 +108,15 @@ public class HomeController {
 
     @GetMapping("/goods_info")
     public String Information (HttpSession session, Model model) {
+        List<Categories_Entity> categories = null;
         User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         User_Entity user = null;
+        categories = categoriesRepository.findCategories();
         if(tmp != null) {
             user = userRepository.findByUserId(tmp.getUserId());
         }
+        categories = categoriesRepository.findCategories();
+        model.addAttribute("Categories_List",categories);
         model.addAttribute("user", user);
         return "goods_info";
     }
