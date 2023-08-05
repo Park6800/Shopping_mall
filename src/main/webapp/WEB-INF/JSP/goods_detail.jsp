@@ -12,6 +12,32 @@
 <meta charset="UTF-8">
 <title>굿즈 상세 페이지</title>
 <link rel="stylesheet" href="/css/GoodsDetail.css">
+<script>
+function ajax_Categories(typeName) {
+    var categories = typeName;
+    $.ajax({
+        url: "/Categories",
+        type: "POST",
+        cache: false,
+        dataType: 'json',
+        data: { typeName:categories },
+        async: false, // AJAX 요청을 동기적으로 처리합니다.
+        success: function (data) {
+        var list_container = $(".detail_list");
+        list_container.empty();
+             for (var i = 0; i < data.length; i++) {
+                var content = data[i];
+                list_container.append("<li class='z_height'>" + content + "<li>");
+             }
+             var content = "";
+             categories = "";
+        },
+        error: function (request, status, error) {
+            console.log(error); // 에러 메시지를 콘솔에 출력
+        }
+    });
+}
+</script>
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -78,10 +104,10 @@
                         <div id="search">
                             <select id="select_search">
                                 <option value="">전체<option>
-                            <c:forEach var="Categories" items="${Categories_List}">
-                                <option value="${Categories.typeName}">${Categories.typeName}</option>
-                            </c:forEach>
-                        </select>
+                                <c:forEach var="Categories" items="${Categories_List}">
+                                    <option value="${Categories.typeName}">${Categories.typeName}</option>
+                                </c:forEach>
+                            </select>
                         <input type="text" id="input_search" placeholder="찾는 상품을 검색해보세요.">
                     </div>
                     <div id="My_page">

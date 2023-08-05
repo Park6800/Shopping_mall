@@ -141,4 +141,12 @@ function ajax_Categories(typeName) {
             </div>
         </div>
     </body>
+    <script>
+    function Open_Categories() {
+       $("#Categories_list").css('display', 'block');
+    }
+    function Close_Categoires() {
+       $("#Categories_list").css('display', 'none');
+    }
+    </script>
 </html>

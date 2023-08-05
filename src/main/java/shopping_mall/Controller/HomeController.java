@@ -66,10 +66,13 @@ public class HomeController {
         List<GoodsDetail_Entity> goodsDetailEntities = goodsService.findDetail_Goods(goods_detail);
         User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         User_Entity user = null;
+        List<Categories_Entity> categories = null;
+        categories = categoriesRepository.findCategories();
         if(tmp != null) {
             user = userRepository.findByUserId(tmp.getUserId());
         }
         model.addAttribute("Goods_detail", goodsDetailEntities);
+        model.addAttribute("Categories_List",categories);
         model.addAttribute("user", user);
         return "goods_detail";
     }
