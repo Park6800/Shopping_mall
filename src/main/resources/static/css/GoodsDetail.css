@@ -146,6 +146,15 @@ nav {
     display:flex;
     width:60%;
     justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.img_display {
+    margin-left:20px;
+}
+
+.img_margin {
+    margin-top:20px;
 }
 
 .TypeNames {

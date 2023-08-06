@@ -140,8 +140,29 @@ function ajax_Categories(typeName) {
                 </div>
             </div>
         </div>
-    </body>
-    <script>
+        <div id="Type_container">
+            <div id="Type_name_list">
+                멈춰!
+            </div>
+            <div id="img_type">
+                <c:forEach var="Goods" items="${Goods_detail}">
+                    <div class="img_display">
+                        <a href="goods_info?=${Goods.goodsName}">
+                            <div class="TypeName">
+                                <img src="${Goods.goodsUrl}">
+                                ${Goods.goodsName}
+                            </div>
+                        </a>
+                    </div>
+                </c:forEach>
+            </div>
+            <div id="bin_con">
+                멈춰!
+            </div>
+        </div>
+    </div>
+</body>
+<script>
     function Open_Categories() {
        $("#Categories_list").css('display', 'block');
     }
