@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인 홈</title>
+<title>회원가입 페이지</title>
 <link rel="stylesheet" href="/css/Home.css">
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>

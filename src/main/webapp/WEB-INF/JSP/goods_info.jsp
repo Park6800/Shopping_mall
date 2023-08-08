@@ -145,16 +145,10 @@ function ajax_Categories(typeName) {
                 멈춰!
             </div>
             <div id="img_type">
-                <c:forEach var="Goods" items="${Goods_detail}">
-                    <div class="img_display">
-                        <a href="goods_info?=${Goods.goodsName}">
-                            <div class="TypeName">
-                                <img src="${Goods.goodsUrl}">
-                                ${Goods.goodsName}
-                            </div>
-                        </a>
+                <div class="img_display">
+                    <div class="TypeName">
                     </div>
-                </c:forEach>
+                </div>
             </div>
             <div id="bin_con">
                 멈춰!
