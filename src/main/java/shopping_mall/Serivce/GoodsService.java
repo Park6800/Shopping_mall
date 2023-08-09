@@ -62,13 +62,13 @@ public class GoodsService {
         return basketEntities;
     }
 
-    public GoodsDetail_Entity findGoodsDetail (String GoodsId) {
+    public GoodsDetail_Entity findGoodsDetail (String GoodsName) {
         GoodsDetail_Entity goodsDetailEntity = null;
             try {
-                goodsDetailEntity = goodsDetailRepository.GoodsInfo(GoodsId);
+                goodsDetailEntity = goodsDetailRepository.GoodsInfo(GoodsName);
             } catch (Exception error) {
                 error.printStackTrace();
             }
-        return null;
+        return goodsDetailEntity;
     }
 }

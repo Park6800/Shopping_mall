@@ -110,15 +110,16 @@ public class HomeController {
     }
 
     @GetMapping("/goods_info")
-    public String Information (@RequestParam("GoodsId") String GoodsId, HttpSession session, Model model) {
+    public String Information (@RequestParam("GoodsName") String GoodsName, HttpSession session, Model model) {
         List<Categories_Entity> categories = null;
         User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         User_Entity user = null;
-        GoodsDetail_Entity goodsDetailEntity = goodsService.findGoodsDetail(GoodsId);
+        GoodsDetail_Entity goodsDetailEntity = goodsService.findGoodsDetail(GoodsName);
         categories = categoriesRepository.findCategories();
         if(tmp != null) {
             user = userRepository.findByUserId(tmp.getUserId());
         }
+        System.out.println("URL : " + goodsDetailEntity.getGoodsUrl());
         categories = categoriesRepository.findCategories();
         model.addAttribute("Categories_List",categories);
         model.addAttribute("user", user);

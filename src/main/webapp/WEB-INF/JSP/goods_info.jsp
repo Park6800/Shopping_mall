@@ -147,6 +147,16 @@ function ajax_Categories(typeName) {
             <div id="img_type">
                 <div class="img_display">
                     <div class="TypeName">
+                        <img src="${Goods_info.getGoodsUrl()}">
+                        <div>
+                            ${Goods_info.getGoodsName()}
+                        </div>
+                        <div>
+                            ${Goods_info.getGoodsPrice()}
+                        </div>
+                        <div>
+                            ${Goods_info.getGoodsExplain()}
+                        </div>
                     </div>
                 </div>
             </div>

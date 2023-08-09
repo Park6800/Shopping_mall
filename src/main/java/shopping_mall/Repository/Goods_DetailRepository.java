@@ -13,6 +13,6 @@ public interface Goods_DetailRepository extends JpaRepository<GoodsDetail_Entity
     @Query(value="select * from GoodsDetail where Goods_type = ?1", nativeQuery = true)
     public List<GoodsDetail_Entity> findGoodsDetail (String type);
 
-    @Query(value = "select * from GoodsDetail where GoodsId = ?1",nativeQuery = true)
-    public GoodsDetail_Entity GoodsInfo (String Id);
+    @Query(value = "select * from GoodsDetail where Goods_name = ?1",nativeQuery = true)
+    public GoodsDetail_Entity GoodsInfo (String Name);
 }
