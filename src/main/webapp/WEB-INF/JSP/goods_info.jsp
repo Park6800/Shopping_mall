@@ -157,6 +157,9 @@ function ajax_Categories(typeName) {
                         <div>
                             ${Goods_info.getGoodsExplain()}
                         </div>
+                        <div>
+                            ${Goods_info.getGoods_delivery()} 시간
+                        </div>
                     </div>
                 </div>
             </div>
