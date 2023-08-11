@@ -149,16 +149,19 @@ function ajax_Categories(typeName) {
                     <div class="TypeName">
                         <img src="${Goods_info.getGoodsUrl()}">
                         <div>
-                            ${Goods_info.getGoodsName()}
+                            상품명 : ${Goods_info.getGoodsName()}
                         </div>
                         <div>
-                            ${Goods_info.getGoodsPrice()}
+                            상품 가격 : ${Goods_info.getGoodsPrice()}
                         </div>
                         <div>
-                            ${Goods_info.getGoodsExplain()}
+                            상품 상세 정보 : ${Goods_info.getGoodsExplain()}
                         </div>
                         <div>
-                            ${Goods_info.getGoods_delivery()} 시간
+                            예상 배송 : ${Goods_info.getGoods_delivery()} 시간
+                        </div>
+                        <div>
+                            원산지 : ${Goods_info.getGoods_country()}
                         </div>
                     </div>
                 </div>
