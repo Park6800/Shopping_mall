@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>상세 정보 페이지</title>
-<link rel="stylesheet" href="/css/Home.css">
+<link rel="stylesheet" href="/css/Goodsinfo.css">
 <%-- 폰트어썸 --%>
 <script src="https://kit.fontawesome.com/7bb4972374.js" crossorigin="anonymous"></script>
 <%-- 제이쿼리 --%>
@@ -147,21 +147,25 @@ function ajax_Categories(typeName) {
             <div id="img_type">
                 <div class="img_display">
                     <div class="TypeName">
-                        <img src="${Goods_info.getGoodsUrl()}">
                         <div>
-                            상품명 : ${Goods_info.getGoodsName()}
+                            <img src="${Goods_info.getGoodsUrl()}">
                         </div>
-                        <div>
-                            상품 가격 : ${Goods_info.getGoodsPrice()}
-                        </div>
-                        <div>
-                            상품 상세 정보 : ${Goods_info.getGoodsExplain()}
-                        </div>
-                        <div>
-                            예상 배송 : ${Goods_info.getGoods_delivery()} 시간
-                        </div>
-                        <div>
-                            원산지 : ${Goods_info.getGoods_country()}
+                        <div id="Information">
+                            <div>
+                                상품명 : ${Goods_info.getGoodsName()}
+                            </div>
+                            <div>
+                                상품 가격 : ${Goods_info.getGoodsPrice()}
+                            </div>
+                            <div>
+                                상품 상세 정보 : ${Goods_info.getGoodsExplain()}
+                            </div>
+                            <div>
+                                예상 배송 : ${Goods_info.getGoods_delivery()} 시간
+                            </div>
+                            <div>
+                                원산지 : ${Goods_info.getGoods_country()}
+                            </div>
                         </div>
                     </div>
                 </div>
