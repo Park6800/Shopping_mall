@@ -150,18 +150,22 @@ nav {
 }
 
 .img_display {
+    width:100%;
     margin-left:20px;
 }
 
 .TypeName {
     display:flex;
+    width:100%;
     font-size:20px;
     margin-top:30px;
     text-align:center;
 }
 
 #Information {
-    width:100%;
+    width:80%;
+    text-align:left;
+    margin:auto;
 }
 
 #bin_con {
