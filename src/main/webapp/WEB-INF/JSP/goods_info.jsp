@@ -166,6 +166,33 @@ function ajax_Categories(typeName) {
                             <div>
                                 원산지 : ${Goods_info.getGoods_country()}
                             </div>
+                            <div id="Btn_number">
+                                <div>
+                                    <button class="Btn_count" id="plus_btn">+</button>
+                                </div>
+                                <div id="count_number">
+                                    0
+                                </div>
+                                <div>
+                                    <button class="Btn_count" id="minus_btn">-</button>
+                                </div>
+                            </div>
+                            <div id="Total_price">
+                                <div>
+                                    주문 금액
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                            </div>
+                            <div id="Btn_Sell">
+                                <div>
+                                    <button class="Sell_Detail_Btn">주문하기</button>
+                                </div>
+                                <div>
+                                    <button class="Sell_Detail_Btn">장바구니에 담기</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,5 +210,22 @@ function ajax_Categories(typeName) {
     function Close_Categoires() {
        $("#Categories_list").css('display', 'none');
     }
-    </script>
+     $(document).ready(function() {
+            $("#plus_btn").click(function() {
+                const number = $("#count_number");
+                let CountNumber = number.text();
+                CountNumber = parseInt(CountNumber) + 1;
+                number.text(CountNumber);
+            });
+
+            $("#minus_btn").click(function() {
+                const number = $("#count_number");
+                let CountNumber = number.text();
+                if (CountNumber != 0) {
+                    CountNumber = parseInt(CountNumber) - 1;
+                }
+                number.text(CountNumber);
+            });
+        });
+</script>
 </html>

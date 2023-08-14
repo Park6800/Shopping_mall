@@ -188,3 +188,41 @@ nav {
     color:white;
     background:#87ceeb;
 }
+
+#Btn_number {
+    display:flex;
+    justify-content:right;
+}
+
+#count_number {
+    width:50px;
+    height:30px;
+    font-size:25px;
+    text-align:center;
+}
+
+.Btn_count {
+    width:40px;
+    height:30px;
+    font-size:25px;
+    text-align:center;
+}
+
+#Total_price {
+    display:flex;
+    justify-content:right;
+}
+
+#Btn_Sell {
+    display:flex;
+    justify-content:right;
+}
+
+.Sell_Detail_Btn {
+    width:180px;
+    height:60px;
+    font-size:20px;
+    text-align:center;
+    background-color:none;
+    margin-right:20px;
+}
