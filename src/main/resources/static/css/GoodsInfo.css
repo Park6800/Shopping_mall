@@ -208,9 +208,28 @@ nav {
     text-align:center;
 }
 
+#minus_btn {
+    margin-right:20px;
+}
+
 #Total_price {
     display:flex;
     justify-content:right;
+}
+
+#Price {
+    width:100px;
+    height:30px;
+    margin-right:10px;
+}
+
+#Count_Price {
+    width:100px;
+    height:30px;
+    font-size:25px;
+    margin-right:20px;
+    border:1px solid black;
+    text-align:center;
 }
 
 #Btn_Sell {

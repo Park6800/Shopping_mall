@@ -178,10 +178,10 @@ function ajax_Categories(typeName) {
                                 </div>
                             </div>
                             <div id="Total_price">
-                                <div>
+                                <div id="Price">
                                     주문 금액
                                 </div>
-                                <div>
+                                <div id="Count_Price">
                                     0
                                 </div>
                             </div>
@@ -213,18 +213,26 @@ function ajax_Categories(typeName) {
      $(document).ready(function() {
             $("#plus_btn").click(function() {
                 const number = $("#count_number");
+                const price = $("#Count_Price");
+                let CountPrice = price.text();
                 let CountNumber = number.text();
                 CountNumber = parseInt(CountNumber) + 1;
+                CountPrice = parseInt(CountPrice) + ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
                 number.text(CountNumber);
+                price.text(CountPrice);
             });
 
             $("#minus_btn").click(function() {
                 const number = $("#count_number");
                 let CountNumber = number.text();
+                const price = $("#Count_Price");
+                let CountPrice = price.text();
                 if (CountNumber != 0) {
                     CountNumber = parseInt(CountNumber) - 1;
+                    CountPrice = parseInt(CountPrice) - ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
                 }
                 number.text(CountNumber);
+                price.text(CountPrice);
             });
         });
 </script>
