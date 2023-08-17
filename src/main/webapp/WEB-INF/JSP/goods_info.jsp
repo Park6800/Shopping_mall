@@ -187,10 +187,10 @@ function ajax_Categories(typeName) {
                             </div>
                             <div id="Btn_Sell">
                                 <div>
-                                    <button class="Sell_Detail_Btn">주문하기</button>
+                                    <button class="Sell_Detail_Btn" id="Sell_btn">주문하기</button>
                                 </div>
                                 <div>
-                                    <button class="Sell_Detail_Btn">장바구니에 담기</button>
+                                    <button class="Sell_Detail_Btn" id="basket_btn">장바구니에 담기</button>
                                 </div>
                             </div>
                         </div>
@@ -198,7 +198,7 @@ function ajax_Categories(typeName) {
                 </div>
             </div>
             <div id="bin_con">
-                멈춰!
+                ${user.getUserId()}
             </div>
         </div>
     </div>
@@ -234,6 +234,30 @@ function ajax_Categories(typeName) {
                 number.text(CountNumber);
                 price.text(CountPrice);
             });
-        });
+
+            $("#Sell_btn").click(function() {
+
+            });
+
+            $("#basket_btn").click(function() {
+                const User_id = '${user.getUserId()}';
+                const Goods_count = parseInt($("#count_number").text());
+                const Goods_id = '${Goods_info.getGoodsId()}';
+                $.ajax({
+                      url: "/MyBasket",
+                      type: "POST",
+                      dataType: 'json',
+                      data: JSON.stringify({ User_id: User_id, Goods_count: Goods_count, Goods_id: Goods_id }),
+                      contentType: "application/json",
+                      success: function(data) {
+                        alert("장바구니에 담겼습니다!");
+                      },
+                      error: function(err) {
+                        console.error(err);
+                        // 에러 발생시 처리
+                      },
+                    });
+            });
+     });
 </script>
 </html>

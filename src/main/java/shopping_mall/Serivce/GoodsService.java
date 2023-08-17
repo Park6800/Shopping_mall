@@ -2,6 +2,7 @@ package shopping_mall.Serivce;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shopping_mall.Dto.BasketDto;
 import shopping_mall.Entity.Basket_Entity;
 import shopping_mall.Entity.GoodsDetail_Entity;
 import shopping_mall.Entity.Goods_Entity;
@@ -70,5 +71,15 @@ public class GoodsService {
                 error.printStackTrace();
             }
         return goodsDetailEntity;
+    }
+
+    public String InsertBasket(BasketDto basketDto) {
+        Basket_Entity basketEntity = new Basket_Entity(basketDto);
+        try {
+            basketRepository.save(basketEntity);
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
+        return "null";
     }
 }

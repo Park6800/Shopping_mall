@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import shopping_mall.Dto.BasketDto;
 import shopping_mall.Entity.*;
 import shopping_mall.Repository.CategoriesRepository;
 import shopping_mall.Repository.UserRepository;
@@ -125,5 +126,12 @@ public class HomeController {
         model.addAttribute("user", user);
         model.addAttribute("Goods_info", goodsDetailEntity);
         return "goods_info";
+    }
+
+    @PostMapping("/MyBasket")
+    public String MyBasket(@RequestBody BasketDto basketDto) {
+        System.out.println(basketDto);
+        goodsService.InsertBasket(basketDto);
+        return "null";
     }
 }

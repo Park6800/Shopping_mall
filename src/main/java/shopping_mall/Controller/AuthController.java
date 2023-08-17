@@ -67,9 +67,7 @@ public class AuthController {
         ResponseDto<SignInResponseDto> res = authService.signIn(dto);
         // 로그인 성공시 메인 페이지로 리다이렉트 실패시 다시 로그인 화면
         if (res.isResult() == true) {
-            System.out.println(res);
             session.setAttribute("login_result", res.getData().getUser());
-            System.out.println(res.getData().getUser());
             return "redirect:/home";
         } else {
             return "login";
