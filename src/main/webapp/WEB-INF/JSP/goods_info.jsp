@@ -17,6 +17,7 @@
 <%-- 스와이퍼 cdn --%>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<% User_Entity user = (User_Entity) session.getAttribute("login_result"); %>
 <script>
 function ajax_Categories(typeName) {
     var categories = typeName;
@@ -42,10 +43,65 @@ function ajax_Categories(typeName) {
         }
     });
 }
+
+    function Open_Categories() {
+       $("#Categories_list").css('display', 'block');
+    }
+    function Close_Categoires() {
+       $("#Categories_list").css('display', 'none');
+    }
+     $(document).ready(function() {
+            $("#plus_btn").click(function() {
+                const number = $("#count_number");
+                const price = $("#Count_Price");
+                let CountPrice = price.text();
+                let CountNumber = number.text();
+                CountNumber = parseInt(CountNumber) + 1;
+                CountPrice = parseInt(CountPrice) + ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
+                number.text(CountNumber);
+                price.text(CountPrice);
+            });
+
+            $("#minus_btn").click(function() {
+                const number = $("#count_number");
+                let CountNumber = number.text();
+                const price = $("#Count_Price");
+                let CountPrice = price.text();
+                if (CountNumber != 0) {
+                    CountNumber = parseInt(CountNumber) - 1;
+                    CountPrice = parseInt(CountPrice) - ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
+                }
+                number.text(CountNumber);
+                price.text(CountPrice);
+            });
+
+            $("#Sell_btn").click(function() {
+
+            });
+
+            $("#basket_btn").click(function() {
+                const User_id = $("#bin_con").text();
+                const Goods_count = parseInt($("#count_number").text());
+                const Goods_id = ${Goods_info.getGoodsId()};
+                $.ajax({
+                      url: "/MyBasket",
+                      type: "POST",
+                      dataType: 'json',
+                      data: JSON.stringify({ User_id: User_id, Goods_count: Goods_count, Goods_id: Goods_id }),
+                      contentType: "application/json",
+                      success: function(data) {
+                        alert("장바구니에 담겼습니다!");
+                      },
+                      error: function(err) {
+                        console.error(err);
+                        // 에러 발생시 처리
+                      },
+                });
+            });
+     });
 </script>
 </head>
 <body>
-<% User_Entity user = (User_Entity) session.getAttribute("login_result"); %>
     <div>
         <div id="nav_con">
             <nav>
@@ -203,61 +259,4 @@ function ajax_Categories(typeName) {
         </div>
     </div>
 </body>
-<script>
-    function Open_Categories() {
-       $("#Categories_list").css('display', 'block');
-    }
-    function Close_Categoires() {
-       $("#Categories_list").css('display', 'none');
-    }
-     $(document).ready(function() {
-            $("#plus_btn").click(function() {
-                const number = $("#count_number");
-                const price = $("#Count_Price");
-                let CountPrice = price.text();
-                let CountNumber = number.text();
-                CountNumber = parseInt(CountNumber) + 1;
-                CountPrice = parseInt(CountPrice) + ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
-                number.text(CountNumber);
-                price.text(CountPrice);
-            });
-
-            $("#minus_btn").click(function() {
-                const number = $("#count_number");
-                let CountNumber = number.text();
-                const price = $("#Count_Price");
-                let CountPrice = price.text();
-                if (CountNumber != 0) {
-                    CountNumber = parseInt(CountNumber) - 1;
-                    CountPrice = parseInt(CountPrice) - ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
-                }
-                number.text(CountNumber);
-                price.text(CountPrice);
-            });
-
-            $("#Sell_btn").click(function() {
-
-            });
-
-            $("#basket_btn").click(function() {
-                const User_id = '${user.getUserId()}';
-                const Goods_count = parseInt($("#count_number").text());
-                const Goods_id = '${Goods_info.getGoodsId()}';
-                $.ajax({
-                      url: "/MyBasket",
-                      type: "POST",
-                      dataType: 'json',
-                      data: JSON.stringify({ User_id: User_id, Goods_count: Goods_count, Goods_id: Goods_id }),
-                      contentType: "application/json",
-                      success: function(data) {
-                        alert("장바구니에 담겼습니다!");
-                      },
-                      error: function(err) {
-                        console.error(err);
-                        // 에러 발생시 처리
-                      },
-                    });
-            });
-     });
-</script>
 </html>

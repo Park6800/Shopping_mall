@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-@Table (name = "MyBasket")
 @Entity
+@Table (name = "MyBasket")
 public class Basket_Entity {
     @Id
     @Column (name="User_id")
