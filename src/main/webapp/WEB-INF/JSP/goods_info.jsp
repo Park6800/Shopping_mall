@@ -211,7 +211,7 @@ function ajax_Categories(typeName) {
                                 상품명 : ${Goods_info.getGoodsName()}
                             </div>
                             <div>
-                                상품 가격 : ${Goods_info.getGoodsPrice()}
+                                상품 가격 : ${Goods_info.getGoodsPrice()} 원
                             </div>
                             <div>
                                 상품 상세 정보 : ${Goods_info.getGoodsExplain()}
