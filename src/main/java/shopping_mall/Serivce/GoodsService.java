@@ -10,6 +10,7 @@ import shopping_mall.Repository.BasketRepository;
 import shopping_mall.Repository.GoodsRepository;
 import shopping_mall.Repository.Goods_DetailRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -72,7 +73,7 @@ public class GoodsService {
             }
         return goodsDetailEntity;
     }
-
+    @Transactional
     public String InsertBasket(BasketDto basketDto) {
         Basket_Entity basketEntity = new Basket_Entity(basketDto);
         try {

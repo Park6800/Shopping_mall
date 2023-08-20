@@ -80,11 +80,11 @@ function ajax_Categories(typeName) {
             });
 
             $("#basket_btn").click(function() {
-                const User_id = $("#bin_con").text();
-                const Goods_count = parseInt($("#count_number").text());
-                const Goods_id = ${Goods_info.getGoodsId()};
+                var User_id = "${user.getUserId()}";
+                var Goods_count = parseInt($("#count_number").text());
+                var Goods_id = ${Goods_info.getGoodsId()};
                 $.ajax({
-                      url: "/MyBasket",
+                      url: "/mybasket",
                       type: "POST",
                       dataType: 'json',
                       data: JSON.stringify({ User_id: User_id, Goods_count: Goods_count, Goods_id: Goods_id }),
