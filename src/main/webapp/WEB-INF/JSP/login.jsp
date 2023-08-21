@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인 페이지</title>
-<link rel="stylesheet" href="/css/Home.css">
+<link rel="stylesheet" href="/css/Auth_Page.css">
 <%-- 제이쿼리 --%>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -15,11 +15,11 @@
             <div>
                 즐겨 찾기
             </div>
-            <div id="right_nav">
-                <div>
+            <div id="Select_Page">
+                <div id="Login_page">
                     <a href="login">로그인</a>
                 </div>
-                <div>
+                <div id="Sign_page">
                     <a href="signup">회원가입</a>
                 </div>
             </div>
