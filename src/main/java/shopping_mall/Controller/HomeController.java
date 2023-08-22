@@ -128,7 +128,7 @@ public class HomeController {
         return "goods_info";
     }
 
-    @PostMapping("/mybasket")
+    @PostMapping("/MyBasket")
     @ResponseBody
     public String MyBasket(@RequestBody BasketDto basketDto) {
         System.out.println(basketDto);

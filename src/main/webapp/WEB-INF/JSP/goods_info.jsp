@@ -54,49 +54,33 @@ function ajax_Categories(typeName) {
             $("#plus_btn").click(function() {
                 const number = $("#count_number");
                 const price = $("#Count_Price");
+                const Count = $("#Count_Goods");
+                let CountGoods = parseInt(Count.val());
                 let CountPrice = price.text();
                 let CountNumber = number.text();
+                CountGoods = CountGoods + 1;
                 CountNumber = parseInt(CountNumber) + 1;
                 CountPrice = parseInt(CountPrice) + ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
+                Count.val(CountGoods);
                 number.text(CountNumber);
                 price.text(CountPrice);
             });
 
             $("#minus_btn").click(function() {
+                const Count = $("#Count_Goods");
+                let CountGoods = Count.text();
                 const number = $("#count_number");
                 let CountNumber = number.text();
                 const price = $("#Count_Price");
                 let CountPrice = price.text();
                 if (CountNumber != 0) {
+                    CountGoods = parseInt(CountGoods) - 1;
                     CountNumber = parseInt(CountNumber) - 1;
                     CountPrice = parseInt(CountPrice) - ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
                 }
+                Count.text(CountGoods);
                 number.text(CountNumber);
                 price.text(CountPrice);
-            });
-
-            $("#Sell_btn").click(function() {
-
-            });
-
-            $("#basket_btn").click(function() {
-                var User_id = "${user.getUserId()}";
-                var Goods_count = parseInt($("#count_number").text());
-                var Goods_id = ${Goods_info.getGoodsId()};
-                $.ajax({
-                      url: "/mybasket",
-                      type: "POST",
-                      dataType: 'json',
-                      data: JSON.stringify({ User_id: User_id, Goods_count: Goods_count, Goods_id: Goods_id }),
-                      contentType: "application/json",
-                      success: function(data) {
-                        alert("장바구니에 담겼습니다!");
-                      },
-                      error: function(err) {
-                        console.error(err);
-                        // 에러 발생시 처리
-                      },
-                });
             });
      });
 </script>
@@ -243,10 +227,17 @@ function ajax_Categories(typeName) {
                             </div>
                             <div id="Btn_Sell">
                                 <div>
-                                    <button class="Sell_Detail_Btn" id="Sell_btn">주문하기</button>
+                                    <form action="Direct_Sell" method="post">
+                                        <button class="Sell_Detail_Btn" id="Sell_btn">주문하기</button>
+                                    </form>
                                 </div>
                                 <div>
-                                    <button class="Sell_Detail_Btn" id="basket_btn">장바구니에 담기</button>
+                                    <form action="MyBasket" method="post">
+                                        <input type="hidden" value="${user.getUserId()}" name="User_id">
+                                        <input type="hidden" value="${Goods_info.getGoodsId()}" name="Goods_id">
+                                        <input type="text" name="Goods_count" id="Count_Goods">
+                                        <button class="Sell_Detail_Btn" id="basket_btn">장바구니에 담기</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
