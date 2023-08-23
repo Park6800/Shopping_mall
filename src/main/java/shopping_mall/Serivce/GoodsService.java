@@ -73,14 +73,13 @@ public class GoodsService {
             }
         return goodsDetailEntity;
     }
-    @Transactional
-    public String InsertBasket(BasketDto basketDto) {
+
+    public void InsertBasket(BasketDto basketDto) {
         Basket_Entity basketEntity = new Basket_Entity(basketDto);
         try {
             basketRepository.save(basketEntity);
         } catch (Exception error) {
             error.printStackTrace();
         }
-        return "null";
     }
 }

@@ -1,6 +1,8 @@
 package shopping_mall.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import shopping_mall.Dto.BasketDto;
 
 import javax.persistence.Column;
@@ -9,8 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table (name = "MyBasket")
+@Table (name = "mybasket")
 public class Basket_Entity {
     @Id
     @Column (name="User_id")

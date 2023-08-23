@@ -129,10 +129,9 @@ public class HomeController {
     }
 
     @PostMapping("/MyBasket")
-    @ResponseBody
-    public String MyBasket(@RequestBody BasketDto basketDto) {
-        System.out.println(basketDto);
+    public String MyBasket(BasketDto basketDto, HttpSession session) {
+        User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         goodsService.InsertBasket(basketDto);
-        return "null";
+        return "redirect:/basket?UserId=" + tmp.getUserId();
     }
 }

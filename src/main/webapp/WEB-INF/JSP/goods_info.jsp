@@ -62,13 +62,14 @@ function ajax_Categories(typeName) {
                 CountNumber = parseInt(CountNumber) + 1;
                 CountPrice = parseInt(CountPrice) + ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
                 Count.val(CountGoods);
+                Count.change();
                 number.text(CountNumber);
                 price.text(CountPrice);
             });
 
             $("#minus_btn").click(function() {
                 const Count = $("#Count_Goods");
-                let CountGoods = Count.text();
+                let CountGoods = Count.val();
                 const number = $("#count_number");
                 let CountNumber = number.text();
                 const price = $("#Count_Price");
@@ -78,7 +79,7 @@ function ajax_Categories(typeName) {
                     CountNumber = parseInt(CountNumber) - 1;
                     CountPrice = parseInt(CountPrice) - ${fn:replace(Goods_info.getGoodsPrice(), ',', '')};
                 }
-                Count.text(CountGoods);
+                Count.val(CountGoods);
                 number.text(CountNumber);
                 price.text(CountPrice);
             });
@@ -233,9 +234,9 @@ function ajax_Categories(typeName) {
                                 </div>
                                 <div>
                                     <form action="MyBasket" method="post">
-                                        <input type="hidden" value="${user.getUserId()}" name="User_id">
-                                        <input type="hidden" value="${Goods_info.getGoodsId()}" name="Goods_id">
-                                        <input type="text" name="Goods_count" id="Count_Goods">
+                                        <input type="text" value="${user.getUserId()}" name="User_id">
+                                        <input type="text" value="${Goods_info.getGoodsId()}" name="Goods_id">
+                                        <input type="text" value="0" name="Goods_count" id="Count_Goods">
                                         <button class="Sell_Detail_Btn" id="basket_btn">장바구니에 담기</button>
                                     </form>
                                 </div>
