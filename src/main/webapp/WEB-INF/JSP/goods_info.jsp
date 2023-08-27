@@ -220,7 +220,7 @@ function ajax_Categories(typeName) {
                             </div>
                             <div id="Total_price">
                                 <div id="Price">
-                                    주문 금액
+                                    예상 주문 금액
                                 </div>
                                 <div id="Count_Price">
                                     0
