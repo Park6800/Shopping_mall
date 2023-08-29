@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page import="java.util.List" %>
-<%@page import="shopping_mall.Repository.*"%>
-<%@page import="shopping_mall.Entity.User_Entity" %>
-<%@page import="shopping_mall.Entity.GoodsDetail_Entity" %>
+<%@ page import="shopping_mall.Repository.*"%>
+<%@ page import="shopping_mall.Entity.User_Entity" %>
+<%@ page import="shopping_mall.Entity.GoodsDetail_Entity" %>
 <!DOCTYPE html>
 <html>
 <head>
