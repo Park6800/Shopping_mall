@@ -16,10 +16,10 @@
                 즐겨 찾기
             </div>
             <div id="Select_Page">
-                <div id="Login_page">
+                <div id="Login_page" class="Auth_select_btn">
                     <a href="login">로그인</a>
                 </div>
-                <div id="Sign_page">
+                <div id="Sign_page" class="Auth_select_btn">
                     <a href="signup">회원가입</a>
                 </div>
             </div>
