@@ -106,7 +106,7 @@ function ajax_Categories(typeName) {
                         </select>
                         <input type="text" id="input_search" placeholder="찾는 상품을 검색해보세요.">
                     </div>
-                    div id="My_page">
+                    <div id="My_page">
                                             <a href="mypage">
                                                 <div>
                                                     <i class="fa-solid fa-user" id="MyPage"></i>
