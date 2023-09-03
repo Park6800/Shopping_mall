@@ -220,7 +220,7 @@ function ajax_Categories(typeName) {
                             </div>
                             <div id="Total_price">
                                 <div id="Price">
-                                    예상 주문 금액
+                                    주문 금액
                                 </div>
                                 <div id="Count_Price">
                                     0
@@ -234,9 +234,9 @@ function ajax_Categories(typeName) {
                                 </div>
                                 <div>
                                     <form action="MyBasket" method="post">
-                                        <input type="text" value="${user.getUserId()}" name="User_id">
-                                        <input type="text" value="${Goods_info.getGoodsId()}" name="Goods_id">
-                                        <input type="text" value="0" name="Goods_count" id="Count_Goods">
+                                        <input type="hidden" value="${user.getUserId()}" name="User_id">
+                                        <input type="hidden" value="${Goods_info.getGoodsId()}" name="Goods_id">
+                                        <input type="hidden" value="0" name="Goods_count" id="Count_Goods">
                                         <button class="Sell_Detail_Btn" id="basket_btn">장바구니에 담기</button>
                                     </form>
                                 </div>
