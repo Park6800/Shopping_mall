@@ -142,7 +142,7 @@ function ajax_Categories(typeName) {
         </div>
         <div>
             <c:forEach var="MyGoods" items="${Basket}">
-                ${MyGoods.GoodsCount}
+                ${MyGoods.goodsCount}
             </c:forEach>
         </div>
     </body>

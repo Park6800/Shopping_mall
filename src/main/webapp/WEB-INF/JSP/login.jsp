@@ -13,7 +13,9 @@
     <div>
         <nav>
             <div>
-                즐겨 찾기
+                <a href="home">
+                    홈 페이지 이동
+                </a>
             </div>
             <div id="Select_Page">
                 <div id="Login_page" class="Auth_select_btn">
@@ -30,14 +32,14 @@
                     <div>
                         <div>
                             <label for="">아이디</label><br>
-                            <input type="text" name="User_id" placeholder="아이디를 입력해주세요">
+                            <input type="text" name="User_id" placeholder="아이디를 입력해주세요" class="text_input">
                         </div>
                         <div>
                             <label for="">비밀번호</label><br>
-                            <input type="password" name="User_pw" placeholder="비밀번호를 입력해주세요">
+                            <input type="password" name="User_pw" placeholder="비밀번호를 입력해주세요" class="text_input">
                         </div>
                         <div>
-                            <button type="submit">로그인</button>
+                            <button type="submit" id="Submit_btn">로그인</button>
                         </div>
                     </div>
                 </form>

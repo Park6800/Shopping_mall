@@ -117,26 +117,26 @@ function ajax_Categories(typeName) {
                         </select>
                         <input type="text" id="input_search" placeholder="찾는 상품을 검색해보세요.">
                     </div>
-                      <div id="My_page">
-                                            <a href="mypage">
-                                                <div>
-                                                    <i class="fa-solid fa-user" id="MyPage"></i>
-                                                </div>
-                                                <div>
-                                                    마이 페이지
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="My_basket">
-                                            <a href="basket">
-                                                <div>
-                                                    <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
-                                                </div>
-                                                <div>
-                                                    장바구니
-                                                </div>
-                                            </a>
-                                        </div>
+                    <div id="My_page">
+                        <a href="mypage">
+                            <div>
+                                <i class="fa-solid fa-user" id="MyPage"></i>
+                            </div>
+                            <div>
+                                마이 페이지
+                            </div>
+                        </a>
+                    </div>
+                    <div id="My_basket">
+                        <a href="basket?UserId=${user.getUserId()}">
+                            <div>
+                                <i class="fas fa-light fa-cart-shopping" id="shopping_cart"></i>
+                            </div>
+                            <div>
+                                장바구니
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
              <div>

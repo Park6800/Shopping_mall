@@ -39,3 +39,18 @@ nav {
 .Auth_select_btn {
     margin:10px;
 }
+
+.text_input {
+    width:100%;
+    height:20px;
+    margin-top:12px;
+}
+
+#Submit_btn {
+    width:100%;
+    height:30px;
+    font-size:22px;
+    text-align:center;
+    margin-top:20px;
+    border:none;
+}
