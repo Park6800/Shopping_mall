@@ -31,11 +31,15 @@
                 <form action="loginresult" method="post">
                     <div>
                         <div>
-                            <label for="">아이디</label><br>
+                            <div class="label_name">
+                                <label for="">아이디</label><br>
+                            </div>
                             <input type="text" name="User_id" placeholder="아이디를 입력해주세요" class="text_input">
                         </div>
                         <div>
-                            <label for="">비밀번호</label><br>
+                            <div class="label_name">
+                                <label for="" class="label_name">비밀번호</label><br>
+                            </div>
                             <input type="password" name="User_pw" placeholder="비밀번호를 입력해주세요" class="text_input">
                         </div>
                         <div>
