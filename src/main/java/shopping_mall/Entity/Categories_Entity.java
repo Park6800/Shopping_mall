@@ -28,8 +28,4 @@ public class Categories_Entity {
         categories_entity.setTypeName(categoriesDto.getType_name());
         return categories_entity;
     }
-
-    public String getType_name() {
-        return TypeName;
-    }
 }
