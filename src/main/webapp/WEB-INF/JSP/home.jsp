@@ -199,7 +199,7 @@ function Close_Categoires() {
 }
 
      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,    // 슬라이드 사이 여백
+        spaceBetween: 10,    // 슬라이드 사이 여백
 
         slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
         centeredSlides: true,    //센터모드
