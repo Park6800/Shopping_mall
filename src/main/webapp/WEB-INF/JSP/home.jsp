@@ -84,12 +84,12 @@ function ajax_Categories(typeName) {
                                     <ul id="backcolor" onmouseover="Open_Categories()" >
                                         <c:forEach var="category" items="${Categories_List}">
                                             <a href="goods?type=${category.typeName}">
-                                                    <li class="li_top" onmouseover="ajax_Categories('${category.typeName}')">
-                                                            <input value="${category.typeName}" type="hidden" class="type_Name">
-                                                        <div>
-                                                            ${category.typeName}
-                                                        </div>
-                                                    </li>
+                                            <li class="li_top" onmouseover="ajax_Categories('${category.typeName}')">
+                                                <input value="${category.typeName}" type="hidden" class="type_Name">
+                                                <div>
+                                                     ${category.typeName}
+                                                </div>
+                                            </li>
                                             </a>
                                         </c:forEach>
                                     </ul>
