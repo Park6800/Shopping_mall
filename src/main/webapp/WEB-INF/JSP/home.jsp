@@ -154,7 +154,7 @@ function ajax_Categories(typeName) {
              </div>
          </div>
          <div id="Today_items">
-            <h3>오늘의 아이템</h3>
+            <h3>오늘의 상품</h3>
             <div id="hot_item">
                 <p>오늘 가장 HOT한 상품</p>
                 <p>전체 보기</p>
