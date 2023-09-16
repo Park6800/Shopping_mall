@@ -22,7 +22,7 @@ function ajax_Categories(typeName) {
         cache: false,
         dataType: 'json',
         data: { typeName:categories },
-        async: false, // AJAX 요청을 동기적으로 처리합니다.
+        async: false, // AJAX 요청을 비동기적으로 처리합니다.
         success: function (data) {
         var list_container = $(".detail_list");
         list_container.empty();
