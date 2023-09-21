@@ -35,7 +35,7 @@ nav {
 }
 
 .nav_right {
-    margin-left:20px;
+    margin-top:20px;
 }
 
 #categories {
@@ -140,4 +140,10 @@ nav {
 #input_search {
     width:70%;
     height:40px;
+}
+
+.nav_container {
+    width:60%;
+    text-align:center;
+
 }

@@ -140,10 +140,10 @@ function ajax_Categories(typeName) {
                 </div>
             </div>
         </div>
-        <div>
+        <div class="nav_container">
             <c:choose>
                 <c:when test = "${user != null}">
-                    <div class="nav_right">${user.getUser_id()}</div>
+                    <div class="nav_right">${user.getUserId()}</div>
                     <div class="nav_right">${user.getUser_name()}</div>
                     <div class="nav_right">${user.getUser_birth()}</div>
                     <div class="nav_right">${user.getUser_phone()}</div>
