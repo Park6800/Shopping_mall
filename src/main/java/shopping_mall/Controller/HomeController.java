@@ -1,9 +1,11 @@
 package shopping_mall.Controller;
 
+import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import shopping_mall.Dto.BasketDto;
 import shopping_mall.Entity.*;
 import shopping_mall.Repository.CategoriesRepository;
@@ -79,13 +81,16 @@ public class HomeController {
     }
 
     @GetMapping("/mypage")
-    public String MyPage (HttpSession session,Model model) {
+    public String MyPage (HttpSession session, Model model, RedirectAttributes redirectAttributes) {
         List<Categories_Entity> categories = null;
         User_Entity tmp = (User_Entity) session.getAttribute("login_result");
         User_Entity user = null;
         categories = categoriesRepository.findCategories();
         if(tmp != null) {
             user = userRepository.findByUserId(tmp.getUserId());
+        } else {
+            redirectAttributes.addFlashAttribute("msg", "로그인이 필요합니다.");
+            return "redirect:/login";
         }
         model.addAttribute("Categories_List",categories);
         model.addAttribute("user", user);
