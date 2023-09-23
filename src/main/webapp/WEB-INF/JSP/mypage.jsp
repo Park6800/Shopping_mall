@@ -148,9 +148,6 @@ function ajax_Categories(typeName) {
                     <div class="nav_right">${user.getUser_birth()}</div>
                     <div class="nav_right">${user.getUser_phone()}</div>
                 </c:when>
-                <c:otherwise>
-                    <div class="Not_login_session">로그인 이후 사용 가능합니다</div>
-                </c:otherwise>
             </c:choose>
         </div>
     </body>
