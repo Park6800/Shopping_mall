@@ -150,7 +150,6 @@ function ajax_Categories(typeName) {
                          </c:forEach>
                     </div>
                     <div id="bin_con">
-                        멈춰!
                     </div>
                 </div>
             </div>

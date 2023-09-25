@@ -104,6 +104,17 @@ nav {
     width:10%;
 }
 
+#category_bar {
+    text-align:center;
+}
+
+#shopping_cart , #MyPage , #Menu_Bar {
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
 #My_basket, #My_page {
     width:10%;
     text-align:right;
@@ -168,6 +179,11 @@ nav {
     margin:auto;
 }
 
+.Detail_info {
+    margin: 20px 0 0 10px ;
+
+}
+
 #bin_con {
     width:10%;
 }
@@ -192,6 +208,7 @@ nav {
 #Btn_number {
     display:flex;
     justify-content:right;
+    margin-top:10px;
 }
 
 #count_number {
@@ -215,6 +232,7 @@ nav {
 #Total_price {
     display:flex;
     justify-content:right;
+    margin-top:10px;
 }
 
 #Price {
@@ -235,6 +253,7 @@ nav {
 #Btn_Sell {
     display:flex;
     justify-content:right;
+    margin-top:10px;
 }
 
 .Sell_Detail_Btn {

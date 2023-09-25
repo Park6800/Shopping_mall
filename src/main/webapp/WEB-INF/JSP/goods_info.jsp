@@ -183,7 +183,6 @@ function ajax_Categories(typeName) {
         </div>
         <div id="Type_container">
             <div id="Type_name_list">
-                멈춰!
             </div>
             <div id="img_type">
                 <div class="img_display">
@@ -192,19 +191,19 @@ function ajax_Categories(typeName) {
                             <img src="${Goods_info.getGoodsUrl()}">
                         </div>
                         <div id="Information">
-                            <div>
+                            <div class="Detail_info">
                                 상품명 : ${Goods_info.getGoodsName()}
                             </div>
-                            <div>
+                            <div class="Detail_info">
                                 상품 가격 : ${Goods_info.getGoodsPrice()} 원
                             </div>
-                            <div>
+                            <div class="Detail_info">
                                 상품 상세 정보 : ${Goods_info.getGoodsExplain()}
                             </div>
-                            <div>
+                            <div class="Detail_info">
                                 예상 배송 : ${Goods_info.getGoods_delivery()} 시간
                             </div>
-                            <div>
+                            <div class="Detail_info">
                                 원산지 : ${Goods_info.getGoods_country()}
                             </div>
                             <div id="Btn_number">
