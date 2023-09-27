@@ -27,7 +27,7 @@ function ajax_Categories(typeName) {
         list_container.empty();
              for (var i = 0; i < data.length; i++) {
                 var content = data[i];
-                list_container.append("<li class='z_height'>" + content + "<li>");
+                list_container.append("<li class='z_height'><a href='/goods_detail?type_detail=" + content + "'>" + content + "</a><li>");
              }
              var content = "";
              categories = "";
