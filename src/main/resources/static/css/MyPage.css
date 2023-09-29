@@ -145,5 +145,6 @@ nav {
 .nav_container {
     width:60%;
     margin:auto;
+    border:1px solid black;
 
 }
